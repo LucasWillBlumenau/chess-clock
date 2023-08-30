@@ -1,1 +1,1 @@
-# chess-lclock
+Simple chess clock made with javascript, html and css.
