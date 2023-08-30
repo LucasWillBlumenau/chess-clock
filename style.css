@@ -1,0 +1,57 @@
+:root {
+    --bg-color: linear-gradient(60deg, #7979d9, #4a4ac7, #4343e9);
+    --chess-bg-color: linear-gradient(60deg, #6429edb2, #5c1bf4b2, #4c00ffb2);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif, Arial, Helvetica;
+}
+
+body {
+    display: flex;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.centralized {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    box-shadow: inset 3px 5px 75px #00000022;
+    background-image: var(--bg-color);
+    flex: 1;
+}
+
+.chess-clock {
+    background-image: var(--chess-bg-color);
+    color: #fff;
+    height: 600px;
+    width: 500px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.player-clock {
+    font-size: 64px;
+    font-weight: 600;
+    width: 100%;
+    height: 50%;
+    cursor: pointer;
+}
+
+.player-clock.selected {
+    background-color: #e7d8dd;
+}
+
+.player-clock:last-child {
+    border-top: 0.5px solid #555;
+}
