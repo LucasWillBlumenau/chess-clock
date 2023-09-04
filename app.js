@@ -87,6 +87,17 @@ const fromNanoToString = nanoValue => {
 
 
 const resetGame = () => {
+    if (gameInfo.getIsGamePaused()) {
+        console.log('Executei essa linha')
+        pauseGame()
+    }
+
+    if (!gameInfo.getIsPlayerOneTime()) {
+        gameInfo.changePlayerTime()
+        playerOneDiv.classList.toggle('running')
+        playerTwoDiv.classList.toggle('running')    
+    }
+
     gameInfo.resetGame()
     clearInterval(gameInfo.getLastInterval())
     gameInfo.setLastInterval(null)
@@ -99,6 +110,8 @@ const swapPlayer = () => {
     gameInfo.changePlayerTime()
     clearInterval(gameInfo.getLastInterval())
     gameInfo.setLastInterval(setInterval(gameInfo.getIsPlayerOneTime()? gameInfo.discountPlayerOneTime: gameInfo.discountPlayerTwoTime, 100))
+    playerOneDiv.classList.toggle('running')
+    playerTwoDiv.classList.toggle('running')
 }
 
 
